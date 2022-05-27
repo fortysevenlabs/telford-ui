@@ -1,22 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  async function connectWallet() {
+    console.log("Connecting to wallet....")
+
+    if (window.ethereum) {
+      console.log("metamask wallet exists...")
+    } else {
+      console.log("please install metamask wallet...")
+    }
+
+
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        Telord
+
+        <button onClick={connectWallet}>
+          Connect Wallet
+        </button>
+
+        <h3> Wallet Addres: 0x002adaxxxx345c </h3>
+
       </header>
     </div>
   );
