@@ -1,18 +1,27 @@
 import './App.css';
-// import { ethers } from 'ethers';
-import { useState } from 'react';
+import FormInput from './FormInput.js';
+
+import { ethers } from 'ethers';
+import { useRef, useState } from 'react';
 
 function App() {
 
   /* properties */
+  // metamask connection
   const [connectButtonText, setConnectButtonText] = useState("Connect Wallet");
   const [walletAddress, setWalletAddress] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  // ethers properties
+  // ethers.js
   // const [provider, setProvider] = useState(null);
   // const [signer, setSigner] = useState(null);
   // const [contract, setContract] = useState(null);
+
+  // telford
+  // use enums to support multiple tokens and chains
+  const tokenRef = useRef("ETH");
+  const fromChainRef = useRef("Arbitrum");
+  const toChainRef = useRef("Optimism");
 
   /* helper functions */
 
@@ -51,8 +60,8 @@ function App() {
     // setSigner(tempSigner);
 
     // review the right place to set provider and signer later
-    // const tempProvider = new ethers.providers.Web3Provider(window.ethereum);
-    // const tempSigner = tempProvider.getSigner();
+    const tempProvider = new ethers.providers.Web3Provider(window.ethereum);
+    const tempSigner = tempProvider.getSigner();
   }
 
   async function accountChangedHandler(accounts) {
@@ -80,6 +89,12 @@ function App() {
   // - it should go back to "connect wallet"
   // - and the wallet address: should be empty
 
+  // need to write functions consistently across this file
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // contract.bridge();
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -89,11 +104,24 @@ function App() {
           {connectButtonText}
         </button>
 
-        <h3> Wallet Addres: {walletAddress} </h3>
+        Wallet Address: {walletAddress}
 
         {errorMessage}
 
       </header>
+
+
+      <div className="form">
+        <form onSubmit={handleSubmit}>
+          <FormInput refer={tokenRef} placeholder="Token" />
+          <FormInput refer={fromChainRef} placeholder="From" />
+          <FormInput refer={toChainRef} placeholder="To (estimated)" />
+          {/* Info section - gas */}
+          <button> Send </button>
+
+        </form>
+
+      </div>
     </div>
   );
 }
