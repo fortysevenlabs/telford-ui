@@ -1,6 +1,13 @@
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+
+  /* properties */
+  // default to empty wallet address
+  const [walletAddress, setWalletAddress] = useState("");
+
+  /* helper functions */
 
   async function connectWallet() {
     console.log('Connecting to wallet....')
@@ -14,6 +21,7 @@ function App() {
           method: 'eth_requestAccounts',
         });
         console.log(accounts);
+        setWalletAddress(accounts[0]);
       } catch (error) {
         console.log('Error connecting...')
       }
@@ -32,7 +40,7 @@ function App() {
           Connect Wallet
         </button>
 
-        <h3> Wallet Addres: 0x002adaxxxx345c </h3>
+        <h3> Wallet Addres: {walletAddress} </h3>
 
       </header>
     </div>
