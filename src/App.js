@@ -3,15 +3,24 @@ import './App.css';
 function App() {
 
   async function connectWallet() {
-    console.log("Connecting to wallet....")
+    console.log('Connecting to wallet....')
 
     if (window.ethereum) {
-      console.log("metamask wallet exists...")
+      console.log('Metamask wallet exists...')
+
+      try {
+        console.log('Getting accounts from metamask...')
+        const accounts = await window.ethereum.request({
+          method: 'eth_requestAccounts',
+        });
+        console.log(accounts);
+      } catch (error) {
+        console.log('Error connecting...')
+      }
+
     } else {
-      console.log("please install metamask wallet...")
+      console.log('please install metamask wallet...')
     }
-
-
   }
 
   return (
