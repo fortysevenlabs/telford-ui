@@ -1,39 +1,64 @@
 .App {
+  /* display: flex; */
+  align-items: center;
+ justify-content: center;
   text-align: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url(../public/images/pexels-veeterzy-114979.jpg);
+  background-size: cover;
+  background-position: center;
   height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.header {
+  /* display: flex; */
+  flex-basis: 100%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 30px 10%;
+  margin: 0px 30px;
+}
+
+.body {
+  /* display: flex; */
+  justify-content: center;
+  flex-basis: 100%;
+  margin: 100px;
+}
+
+.walletButton {
   color: white;
+  height: 4rem;
+  padding: 0.8rem 2.8rem;
+  font-size: 1.5rem;
+  background: linear-gradient(99.85deg, rgb(179, 46, 255) -18.29%, rgb(242, 164, 152) 109.86%);
+  box-shadow: rgb(255, 255, 255) 10px -10px 30px, rgba(216, 213, 220, 0.8) -10px 10px 30px;
+  transition: background-color 0.15s ease-out 0s, box-shadow 0.15s ease-out 0s;
+  border-radius: 3rem;
+  text-transform: none;
 }
 
-.App-link {
-  color: #61dafb;
+span {
+  display: block;
+} 
+
+select {
+  padding: 15px;
+  margin: 10px 0px;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sendButton {
+  color: white;
+  width: 13.5rem;
+  padding: 0px 2.8rem 0px 0px;
+  margin: 40px;
+  font-size: 1.8rem;
+  background: linear-gradient(101.98deg, rgb(179, 46, 255) -23.47%, rgb(225, 133, 179) 125.55%);
+  font-weight: 700;
+  line-height: 3.6rem;    
+  border-radius: 2.3rem;
 }
+

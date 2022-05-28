@@ -1,0 +1,113 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_bonderAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_l1RelayerAddress",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "bonderPayment",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "transferId",
+                "type": "uint256"
+            }
+        ],
+        "name": "BonderReimbursed",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "userAddress",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "transferId",
+                "type": "uint256"
+            }
+        ],
+        "name": "BridgeRequested",
+        "type": "event"
+    },
+    {
+        "inputs": [],
+        "name": "bridge",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_transferId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_bridgeAmount",
+                "type": "uint256"
+            }
+        ],
+        "name": "fundsReceivedOnDestination",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_bonder",
+                "type": "address"
+            }
+        ],
+        "name": "setBonder",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_l1Relayer",
+                "type": "address"
+            }
+        ],
+        "name": "setL1Relayer",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]
