@@ -1,7 +1,8 @@
 .App {
-  /* display: flex; */
+  display: flex;
+  flex-direction: column;
   align-items: center;
- justify-content: center;
+  justify-content: center;
   text-align: center;
   background: linear-gradient(
       rgba(255, 255, 255, 0.7),
@@ -14,19 +15,13 @@
 }
 
 .header {
-  /* display: flex; */
-  flex-basis: 100%;
+  display: flex;
+  /* flex-basis: 100%; */
   justify-content: center;
-  padding: 30px 10%;
-  margin: 0px 30px;
+  padding: 30px 30px;
+  /* margin: 30px 0px 0px 0px; */
 }
 
-.body {
-  /* display: flex; */
-  justify-content: center;
-  flex-basis: 100%;
-  margin: 100px;
-}
 
 .walletButton {
   color: white;
@@ -38,27 +33,50 @@
   transition: background-color 0.15s ease-out 0s, box-shadow 0.15s ease-out 0s;
   border-radius: 3rem;
   text-transform: none;
+  border: none;
 }
 
-span {
-  display: block;
-} 
+.message {
+  margin: 50px 0px 50px 0px;
+}
+
+.body {
+}
+
+form {
+  display: flex;
+  flex-direction: column; 
+}
 
 select {
   padding: 15px;
   margin: 10px 0px;
-  border-radius: 5px;
+}
+
+input, select {
+  border-radius: 1rem;
+  padding: 15px;
+  margin: 10px;
+  border: 2px solid #CBC3E3
 }
 
 .sendButton {
   color: white;
-  width: 13.5rem;
-  padding: 0px 2.8rem 0px 0px;
+  width: 8rem;
   margin: 40px;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   background: linear-gradient(101.98deg, rgb(179, 46, 255) -23.47%, rgb(225, 133, 179) 125.55%);
-  font-weight: 700;
-  line-height: 3.6rem;    
-  border-radius: 2.3rem;
+  line-height: 3rem;    
+  border-radius: 3rem;
+  border: none;
+  justify-content: center;
 }
 
+.message {
+  color: #00000;
+  font-family: 'Source Sans Pro', sans-serif;
+  border-radius:.5em;
+  margin: 10px 0px;
+  padding:12px;
+  width: 400px;
+}
